@@ -1,0 +1,16 @@
+name: lunariseye
+description: "Standalone CLI tools that depend on the published lunaris_engine package."
+version: 0.1.0
+homepage: https://github.com/Darklunaris/lunariseye
+repository: https://github.com/Darklunaris/lunaris_engine
+environment:
+  sdk: '>=3.7.2 <4.0.0'
+
+dependencies:
+  lunaris_engine: ^0.1.0
+  # Only depend on the published lunaris_engine package.
+  pool: ^1.5.0
+  dart_console: ^1.0.0
+
+dev_dependencies:
+  test: ^1.24.0
