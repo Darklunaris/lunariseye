@@ -1,0 +1,71 @@
+{
+  "url": "https://darklunaris.vercel.app",
+  "status": 200,
+  "title": "Dark Lunaris - Elite Programming &amp; Algorithm Arsenal",
+  "responseTimeMs": 563,
+  "bodyBytes": 94840,
+  "resourceCount": 32,
+  "externalResources": 6,
+  "mixedContentCount": 0,
+  "headerSecurity": {
+    "hsts": {
+      "present": true,
+      "maxAge": 63072000,
+      "includeSubDomains": true
+    },
+    "csp": {
+      "present": false
+    },
+    "x-frame-options": {
+      "present": false
+    }
+  },
+  "server": "Vercel",
+  "tls": {
+    "subject": "/CN=*.vercel.app",
+    "issuer": "/C=US/O=Let's Encrypt/CN=R11",
+    "start": "2025-06-24T04:57:32.000Z",
+    "end": "2025-09-22T04:57:31.000Z",
+    "sha1": [
+      129,
+      211,
+      250,
+      34,
+      147,
+      229,
+      37,
+      112,
+      133,
+      154,
+      89,
+      247,
+      93,
+      146,
+      196,
+      254,
+      207,
+      53,
+      13,
+      199
+    ]
+  },
+  "geoip": {
+    "status": "success",
+    "country": "United States",
+    "regionName": "California",
+    "city": "Walnut",
+    "isp": "Amazon.com, Inc.",
+    "org": "Vercel, Inc",
+    "as": "AS16509 Amazon.com, Inc.",
+    "query": "216.198.79.195"
+  },
+  "traceroute": [],
+  "fingerprint": {
+    "name": "Vercel",
+    "version": null,
+    "confidence": 85
+  },
+  "waf_cdns": [
+    "Vercel"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "url": "https://darklunaris.vercel.app",
+  "status": 200,
+  "server": "Vercel",
+  "responseTimeMs": 573,
+  "title": "Dark Lunaris - Elite Programming &amp; Algorithm Arsenal",
+  "contentLength": -1,
+  "headerSecurity": {
+    "hsts": {
+      "present": true,
+      "maxAge": 63072000,
+      "includeSubDomains": true
+    },
+    "csp": {
+      "present": false
+    },
+    "x-frame-options": {
+      "present": false
+    }
+  }
+}

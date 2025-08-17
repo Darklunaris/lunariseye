@@ -1,0 +1,159 @@
+{
+  "host": "darklunaris.vercel.app",
+  "ip": "216.198.79.195",
+  "timestamp": "2025-08-17T15:15:44.304137",
+  "ports": [
+    {
+      "port": 22,
+      "banner": null,
+      "protocol": null,
+      "service": "ssh",
+      "severity": {
+        "level": "medium",
+        "score": 5,
+        "note": "SSH exposed (use key auth and strong configs)"
+      }
+    },
+    {
+      "port": 23,
+      "banner": null,
+      "protocol": null,
+      "service": "telnet",
+      "severity": {
+        "level": "critical",
+        "score": 9,
+        "note": "Cleartext remote shell (Telnet)"
+      }
+    },
+    {
+      "port": 80,
+      "banner": null,
+      "protocol": null,
+      "service": "http",
+      "severity": {
+        "level": "medium",
+        "score": 5,
+        "note": "HTTP service; check for outdated software and missing security headers"
+      }
+    },
+    {
+      "port": 443,
+      "banner": null,
+      "protocol": null,
+      "service": "https",
+      "severity": {
+        "level": "medium",
+        "score": 5,
+        "note": "HTTP service; check for outdated software and missing security headers"
+      }
+    },
+    {
+      "port": 5228,
+      "banner": null,
+      "protocol": null,
+      "service": "unknown",
+      "severity": {
+        "level": "info",
+        "score": 1,
+        "note": "Unclassified service \u0012 validate manually"
+      }
+    },
+    {
+      "port": 5555,
+      "banner": null,
+      "protocol": null,
+      "service": "unknown",
+      "severity": {
+        "level": "info",
+        "score": 1,
+        "note": "Unclassified service \u0012 validate manually"
+      }
+    },
+    {
+      "port": 8000,
+      "banner": null,
+      "protocol": null,
+      "service": "unknown",
+      "severity": {
+        "level": "info",
+        "score": 1,
+        "note": "Unclassified service \u0012 validate manually"
+      }
+    },
+    {
+      "port": 8080,
+      "banner": null,
+      "protocol": null,
+      "service": "http-alt",
+      "severity": {
+        "level": "medium",
+        "score": 5,
+        "note": "HTTP service; check for outdated software and missing security headers"
+      }
+    }
+  ],
+  "ports_open_count": 8,
+  "tls": null,
+  "headers": {
+    "x-dns-prefetch-control": "on",
+    "transfer-encoding": "chunked",
+    "date": "Sun, 17 Aug 2025 12:15:42 GMT",
+    "content-encoding": "gzip",
+    "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "feature-policy": "fullscreen 'self'; camera 'none'",
+    "x-vercel-id": "dxb1::49bbm-1755432942572-0da5dddbcb11",
+    "server": "Vercel",
+    "accept-ch": "Sec-CH-Prefers-Color-Scheme",
+    "content-disposition": "inline",
+    "x-nextjs-prerender": "1",
+    "etag": "W/\"65e0bd4eb4ca75c85edac67c5cea62fc\"",
+    "x-frame-options": "DENY",
+    "content-security-policy": "default-src 'self' vercel.com *.vercel.com *.vercel.sh vercel.live wss://*.vercel.com *.codesandbox.io localhost:* chrome-extension://* https://www.youtube-nocookie.com *.chilipiper.com https://risk.clearbit.com https://react-tweet.vercel.app/*;script-src 'self' 'unsafe-eval' 'unsafe-inline' 'inline-speculation-rules' https://cdn.heapanalytics.com *.heapanalytics.com https://www.googletagmanager.com https://www.google-analytics.com https://snap.licdn.com https://www.youtube.com *.doubleclick.net cdn.vercel-insights.com va.vercel-scripts.com vercel.com *.vercel.com *.vercel.sh vercel.live wss://*.vercel.com *.codesandbox.io localhost:* chrome-extension://* https://www.youtube-nocookie.com *.chilipiper.com https://risk.clearbit.com https://react-tweet.vercel.app/*;style-src 'self' 'unsafe-inline' vercel.com *.vercel.com *.vercel.sh vercel.live wss://*.vercel.com *.codesandbox.io localhost:* chrome-extension://* https://www.youtube-nocookie.com *.chilipiper.com https://risk.clearbit.com https://react-tweet.vercel.app/*;img-src 'self' blob: data: *.github.io avatars.githubusercontent.com user-images.githubusercontent.com vercel.com vercel.live *.vercel.sh assets.vercel.com cdn.raster.app https://images.ctfassets.net https://heapanalytics.com https://*.ads.linkedin.com https://www.google.com https://i.ytimg.com https://s3.amazonaws.com pbs.twimg.com https://www.gravatar.com https://lishhsx6kmthaacj.public.blob.vercel-storage.com;media-src 'self' blob: data: vercel.com *.vercel.com *.vercel.sh vercel.live wss://*.vercel.com *.codesandbox.io localhost:* chrome-extension://* https://www.youtube-nocookie.com *.chilipiper.com https://risk.clearbit.com https://react-tweet.vercel.app/*;connect-src 'self' data: *.chilipiper.com *.ingest.sentry.io *.ingest.us.sentry.io wss://ws-us3.pusher.com sockjs-use3.pusher.com https://api.getkoala.com https://analytics.google.com https://www.google-analytics.com *.ads.linkedin.com *.doubleclick.net react-tweet.vercel.app vercel.com *.vercel.com *.vercel.sh vercel.live wss://*.vercel.com *.codesandbox.io localhost:* chrome-extension://* https://www.youtube-nocookie.com *.chilipiper.com https://risk.clearbit.com https://react-tweet.vercel.app/*;font-src 'self' vercel.com assets.vercel.com vercel.live fonts.gstatic.com *.vercel.sh;frame-ancestors  'self'  https://vercel.com",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "access-control-allow-origin": "*",
+    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+    "x-nextjs-stale-time": "300",
+    "referrer-policy": "origin-when-cross-origin",
+    "age": "113275",
+    "content-type": "text/html; charset=utf-8",
+    "x-xss-protection": "0",
+    "x-powered-by": "Next.js, Payload",
+    "x-vercel-cache": "HIT",
+    "x-download-options": "noopen",
+    "critical-ch": "Sec-CH-Prefers-Color-Scheme",
+    "x-content-type-options": "nosniff",
+    "x-matched-path": "/home/cheaper"
+  },
+  "fingerprint": {
+    "name": "Vercel",
+    "version": null,
+    "confidence": 85
+  },
+  "waf_cdns": [
+    "Vercel",
+    "Next.js"
+  ],
+  "geoip": {
+    "status": "success",
+    "country": "United States",
+    "regionName": "California",
+    "city": "Walnut",
+    "isp": "Amazon.com, Inc.",
+    "org": "Vercel, Inc",
+    "as": "AS16509 Amazon.com, Inc.",
+    "query": "216.198.79.195"
+  },
+  "traceroute": [],
+  "severity_summary": {
+    "counts": {
+      "medium": 4,
+      "critical": 1,
+      "info": 3
+    },
+    "highest": {
+      "score": 9,
+      "level": "critical",
+      "port": 23
+    }
+  }
+}
