@@ -7,7 +7,7 @@ environment:
   sdk: '>=3.7.2 <4.0.0'
 
 dependencies:
-  lunaris_engine: ^0.1.0
+  lunaris_engine: ^0.1.1
   # Only depend on the published lunaris_engine package.
   pool: ^1.5.0
   dart_console: ^1.0.0

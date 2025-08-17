@@ -197,10 +197,10 @@ packages:
     dependency: "direct main"
     description:
       name: lunaris_engine
-      sha256: "91dc3656e8b7e45780912290221566ca20859410c42cbb8cb3490aa40cb7c987"
+      sha256: "5a4398fda30b95d6bdf6cc2277b5b38ce856db4c983aac62089946e8b609e42c"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.0"
+    version: "0.1.1"
   matcher:
     dependency: transitive
     description:

@@ -102,7 +102,7 @@ cd lunariseye
 dart pub get
 
 # Web audit
-dart run bin/lunariseye.dart web check https://example.com
+dart run bin/lunariseye.dart web check https://darklunaris.vercel.app
 
 # Mobile/device audit
 dart run bin/lunariseye.dart phone check 192.168.1.42
