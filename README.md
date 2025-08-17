@@ -1,6 +1,6 @@
 # LunarisEye — The Ultimate Network & Web Reconnaissance CLI
 
-![LunarisEye Logo](https://k.top4top.io/p_3514x9kqz1.png)
+![LunarisEye Logo](https://i.top4top.io/p_3516chmld1.png)
 
 > **WARNING — Legal Responsibility**
 > LunarisEye is **not a toy**. Misuse may be illegal. It is strictly for **authorized testing, research, and internal security auditing**. Authors, maintainers, and contributors are **not liable for misuse**. Always obtain explicit permission before scanning targets.
