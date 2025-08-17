@@ -1,6 +1,7 @@
 name: lunariseye
 description: "Standalone CLI tools that depend on the published lunaris_engine package."
 version: 0.1.0
+license: MIT
 homepage: https://github.com/Darklunaris/lunariseye
 repository: https://github.com/Darklunaris/lunariseye
 environment:
