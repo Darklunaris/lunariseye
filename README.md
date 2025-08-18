@@ -129,7 +129,7 @@ dart run bin/lunariseye.dart dns check darklunaris.vercel.app --export lunarisey
 dart run bin/lunariseye.dart phone check darklunaris.vercel.app --export lunariseye_phone_darklunaris.json --allow-external
 
 #
-/bin/bash -lc "cd /home/x/Desktop/my-lib/lunariseye && dart run bin/lunariseye.dart scan --cidr 192.168.1.0/30 --ports 22,80,443 --json; echo '---FILES---'; ls -t lunariseye_scan_*.json 2>/dev/null | head -n1; echo '---CONTENT---'; FILE=$(ls -t lunariseye_scan_*.json 2>/dev/null | head -n1); if [ -n \"$FILE\" ]; then sed -n '1,240p' \"$FILE\"; fi"
+ dart run bin/lunariseye.dart scan --cidr 192.168.1.0/30 --ports 22,80,443 --json; echo '---FILES---'; ls -t lunariseye_scan_*.json 2>/dev/null | head -n1; echo '---CONTENT---'; FILE=$(ls -t lunariseye_scan_*.json 2>/dev/null | head -n1); if [ -n \"$FILE\" ]; then sed -n '1,240p' \"$FILE\"; fi"
 ```
 
 ---

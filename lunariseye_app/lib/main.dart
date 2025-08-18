@@ -232,7 +232,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     DrawerHeader(
                       decoration: BoxDecoration(
-                        color: const Color.fromARGB(51, 139, 0, 0),
+                        color: const Color.fromARGB(20, 44, 44, 44),
                       ),
                       child: const Text(
                         'LunarisEye',
