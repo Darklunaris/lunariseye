@@ -1,0 +1,10 @@
+{
+  "allowExternal": true,
+  "profiles": [
+    {
+      "name": "s",
+      "cidr": "sax",
+      "ports": "sax"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "host": "192.168.1.1",
+  "cert": null,
+  "traceroute": [],
+  "geoip": null,
+  "fingerprint": {
+    "name": null,
+    "version": null,
+    "confidence": 0
+  },
+  "meta": {
+    "timestamp": "2025-08-18T13:04:31.395928"
+  }
+}

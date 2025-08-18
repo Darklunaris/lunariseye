@@ -1,0 +1,78 @@
+{
+  "192.168.1.1": {
+    "open_count": 3,
+    "ports": [
+      {
+        "port": 22,
+        "banner": null,
+        "protocol": null,
+        "service": "ssh",
+        "severity": {
+          "level": "medium",
+          "score": 5,
+          "note": "SSH exposed (use key auth and strong configs)"
+        }
+      },
+      {
+        "port": 80,
+        "banner": null,
+        "protocol": null,
+        "service": "http",
+        "severity": {
+          "level": "medium",
+          "score": 5,
+          "note": "HTTP service; check for outdated software and missing security headers"
+        }
+      },
+      {
+        "port": 443,
+        "banner": null,
+        "protocol": null,
+        "service": "https",
+        "severity": {
+          "level": "medium",
+          "score": 5,
+          "note": "HTTP service; check for outdated software and missing security headers"
+        }
+      }
+    ]
+  },
+  "192.168.1.2": {
+    "open_count": 3,
+    "ports": [
+      {
+        "port": 22,
+        "banner": null,
+        "protocol": null,
+        "service": "ssh",
+        "severity": {
+          "level": "medium",
+          "score": 5,
+          "note": "SSH exposed (use key auth and strong configs)"
+        }
+      },
+      {
+        "port": 80,
+        "banner": null,
+        "protocol": null,
+        "service": "http",
+        "severity": {
+          "level": "medium",
+          "score": 5,
+          "note": "HTTP service; check for outdated software and missing security headers"
+        }
+      },
+      {
+        "port": 443,
+        "banner": null,
+        "protocol": null,
+        "service": "https",
+        "severity": {
+          "level": "medium",
+          "score": 5,
+          "note": "HTTP service; check for outdated software and missing security headers"
+        }
+      }
+    ]
+  }
+}

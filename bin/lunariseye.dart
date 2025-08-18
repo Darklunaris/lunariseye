@@ -39,6 +39,45 @@ lunaris_engine - lunariseye
 ''');
 }
 
+/// Recursively convert values into JSON-encodable structures.
+/// - Map keys are converted to strings.
+/// - DateTime -> ISO8601 string.
+/// - InternetAddress/Uri -> string.
+dynamic _jsonEncodable(dynamic v) {
+  if (v == null) return null;
+  if (v is String || v is num || v is bool) return v;
+  if (v is DateTime) return v.toIso8601String();
+  try {
+    // InternetAddress and Uri both have useful string forms
+    if (v is Uri) return v.toString();
+    if (v.runtimeType.toString().contains('InternetAddress')) {
+      // avoid importing dart:io types explicitly here
+      try {
+        return v.address; // InternetAddress
+      } catch (_) {
+        return v.toString();
+      }
+    }
+  } catch (_) {}
+  if (v is Map) {
+    final out = <String, dynamic>{};
+    v.forEach((k, val) {
+      final key = k is String ? k : k.toString();
+      out[key] = _jsonEncodable(val);
+    });
+    return out;
+  }
+  if (v is Iterable) {
+    return v.map(_jsonEncodable).toList();
+  }
+  // Fallback to string representation for any other type
+  try {
+    return v.toString();
+  } catch (_) {
+    return null;
+  }
+}
+
 Future<int> main(List<String> args) async {
   // Short alias: `c` maps to <topic> check <target>
   if (args.isNotEmpty && args.first == 'c' && args.length >= 2) {
@@ -162,7 +201,11 @@ Future<int> main(List<String> args) async {
         if (cfg.lastResults == null) {
           stdout.writeln('No last results');
         } else {
-          stdout.writeln(JsonEncoder.withIndent('  ').convert(cfg.lastResults));
+          stdout.writeln(
+            JsonEncoder.withIndent(
+              '  ',
+            ).convert(_jsonEncodable(cfg.lastResults)),
+          );
         }
         continue;
       }
@@ -176,7 +219,9 @@ Future<int> main(List<String> args) async {
         try {
           final f = File(path);
           await f.writeAsString(
-            JsonEncoder.withIndent('  ').convert(cfg.lastResults),
+            JsonEncoder.withIndent(
+              '  ',
+            ).convert(_jsonEncodable(cfg.lastResults)),
           );
           stdout.writeln('Exported');
         } catch (e) {
@@ -408,14 +453,16 @@ Future<int> main(List<String> args) async {
       // Always write a JSON export (default path used when none provided).
       try {
         final f = File(exportPath);
-        await f.writeAsString(JsonEncoder.withIndent('  ').convert(result));
+        await f.writeAsString(
+          JsonEncoder.withIndent('  ').convert(_jsonEncodable(result)),
+        );
         stdout.writeln('Wrote JSON export to $exportPath');
       } catch (e) {
         stdout.writeln('Failed to write export to $exportPath: $e');
       }
 
       if (outputJsonFlag) {
-        print(JsonEncoder.withIndent('  ').convert(result));
+        print(JsonEncoder.withIndent('  ').convert(_jsonEncodable(result)));
       } else {
         print('Analysis for ${uri.toString()}');
         print('  Status: ${resp.statusCode}');
@@ -597,14 +644,16 @@ Future<int> main(List<String> args) async {
       // Always write a JSON export by default
       try {
         final f = File(exportPath);
-        await f.writeAsString(JsonEncoder.withIndent('  ').convert(result));
+        await f.writeAsString(
+          JsonEncoder.withIndent('  ').convert(_jsonEncodable(result)),
+        );
         stdout.writeln('Wrote JSON export to $exportPath');
       } catch (e) {
         stdout.writeln('Failed to write export to $exportPath: $e');
       }
 
       if (outputJsonFlag) {
-        print(JsonEncoder.withIndent('  ').convert(result));
+        print(JsonEncoder.withIndent('  ').convert(_jsonEncodable(result)));
       } else {
         print('Web check for ${uri.toString()}');
         print('  Status: ${resp.statusCode}');
@@ -687,13 +736,15 @@ Future<int> main(List<String> args) async {
       // write export
       try {
         final f = File(exportPath);
-        await f.writeAsString(JsonEncoder.withIndent('  ').convert(result));
+        await f.writeAsString(
+          JsonEncoder.withIndent('  ').convert(_jsonEncodable(result)),
+        );
         stdout.writeln('Wrote JSON export to $exportPath');
       } catch (e) {
         stdout.writeln('Failed to write export to $exportPath: $e');
       }
       if (outputJsonFlag) {
-        print(JsonEncoder.withIndent('  ').convert(result));
+        print(JsonEncoder.withIndent('  ').convert(_jsonEncodable(result)));
       } else {
         print('Port check for $host:');
         for (final e in res.entries) {
@@ -737,13 +788,15 @@ Future<int> main(List<String> args) async {
       final result = {'host': host, 'port': port, 'cert': cert};
       try {
         final f = File(exportPath);
-        await f.writeAsString(JsonEncoder.withIndent('  ').convert(result));
+        await f.writeAsString(
+          JsonEncoder.withIndent('  ').convert(_jsonEncodable(result)),
+        );
         stdout.writeln('Wrote JSON export to $exportPath');
       } catch (e) {
         stdout.writeln('Failed to write export to $exportPath: $e');
       }
       if (outputJsonFlag) {
-        print(JsonEncoder.withIndent('  ').convert(result));
+        print(JsonEncoder.withIndent('  ').convert(_jsonEncodable(result)));
       } else {
         print('Certificate for $host:$port');
         cert.forEach((k, v) => print('  $k: $v'));
@@ -806,13 +859,15 @@ Future<int> main(List<String> args) async {
       };
       try {
         final f = File(exportPath);
-        await f.writeAsString(JsonEncoder.withIndent('  ').convert(result));
+        await f.writeAsString(
+          JsonEncoder.withIndent('  ').convert(_jsonEncodable(result)),
+        );
         stdout.writeln('Wrote JSON export to $exportPath');
       } catch (e) {
         stdout.writeln('Failed to write export to $exportPath: $e');
       }
       if (outputJsonFlag) {
-        print(JsonEncoder.withIndent('  ').convert(result));
+        print(JsonEncoder.withIndent('  ').convert(_jsonEncodable(result)));
       } else {
         print('DNS check: $result');
       }
@@ -988,14 +1043,16 @@ Future<int> main(List<String> args) async {
       // write export
       try {
         final f = File(exportPath);
-        await f.writeAsString(JsonEncoder.withIndent('  ').convert(result));
+        await f.writeAsString(
+          JsonEncoder.withIndent('  ').convert(_jsonEncodable(result)),
+        );
         stdout.writeln('Wrote JSON export to $exportPath');
       } catch (e) {
         stdout.writeln('Failed to write export to $exportPath: $e');
       }
 
       if (outputJsonFlag) {
-        print(JsonEncoder.withIndent('  ').convert(result));
+        print(JsonEncoder.withIndent('  ').convert(_jsonEncodable(result)));
       } else {
         print('Phone check for $host ($chosen)');
         print('  Open ports: ${portsList.length}');
@@ -1133,7 +1190,7 @@ Future<int> main(List<String> args) async {
   }
 
   // Prepare a pretty JSON output of full results and write/export as requested.
-  final out = JsonEncoder.withIndent('  ').convert(results);
+  final out = JsonEncoder.withIndent('  ').convert(_jsonEncodable(results));
   if (outputJson) print(out);
   if (!jsonl) {
     try {
